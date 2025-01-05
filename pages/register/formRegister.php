@@ -1,9 +1,9 @@
 <?php
 session_start();
-require './db.php';
+require '../../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if(isset($_POST['name']) && isset($_post['email']) && isset($_POST['password'])){
+    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION ['email'] = $email;
             $_SESSION ['password'] = $hashed_password; 
         } else {
-            echo "Error: ". $conn->connect_error;
-            echo "there's an error";
+            echo "Error: ". $conn->error;
+            // echo "there's an error";
         }
-        header('location: ./register.php');
-        exit();
     }
+    header('location: ../login/login.php');
+    exit();
 }
