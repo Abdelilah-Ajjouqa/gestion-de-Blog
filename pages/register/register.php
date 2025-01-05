@@ -118,7 +118,7 @@
 
                 <p class="text-center text-sm text-gray-500">
                     Already have an account?
-                    <a class="underline text-blue-500" href="./login.php">Sign in</a>
+                    <a class="underline text-blue-500" href="../login/login.php">Sign in</a>
                 </p>
             </form>
         </div>

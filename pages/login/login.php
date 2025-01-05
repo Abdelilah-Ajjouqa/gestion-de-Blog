@@ -82,7 +82,7 @@
 
                 <p class="text-center text-sm text-gray-500">
                     No account?
-                    <a class="underline text-blue-500" href="./register.php">Sign up</a>
+                    <a class="underline text-blue-500" href="../register/register.php">Sign up</a>
                 </p>
             </form>
         </div>
