@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION ['password'] = $hashed_password; 
         } else {
             echo "Error: ". $conn->connect_error;
+            echo "there's an error";
         }
         header('location: ./register.php');
         exit();
