@@ -1,12 +1,12 @@
 <?php
-class Authentification {
+class Authentication {
     private $db;
 
     public function __construct(PDO $db){
         $this->db = $db;
     }
 
-    public function register($name, $email, $password, $confirmPassword, $role = 'normal'){
+    public function register($name, $email, $password, $confirmPassword, $role = 'user'){
 
         try {
             $query = "select * from user where email = :email";

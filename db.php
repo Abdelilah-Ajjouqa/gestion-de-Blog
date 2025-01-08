@@ -1,9 +1,25 @@
 <?php
-$user = 'root';
-$password = '123';
 
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=blog_2", $user, $password);
-} catch (PDOException $e){
-    echo 'Connection failed: ' . $e->getMessage();
+class Database {
+    private $host = 'localhost';
+    private $dbname = 'blog_2';
+    private $user = 'root';
+    private $password = '123';
+    private $conn;
+
+    public function __construct(){
+        try {
+            $conn = new PDO("mysql:host = $this->host; dbname = $this->dbname", $this->user, $this->password);
+            // echo 'Connected successfully';
+        } catch (PDOException $e){
+            echo 'Connection failed: ' . $e->getMessage();
+            exit();
+        }
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
 }
+
+$db = new Database();
