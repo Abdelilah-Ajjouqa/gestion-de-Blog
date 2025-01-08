@@ -39,7 +39,29 @@ class Authentification {
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
             }
+            return true;
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+    }
 
+    public function login($email, $password){
+        try {
+            $query = "SELECT * FROM user WHERE email = :email";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if ($user && password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['role'] = $user['role'];
+                return true;
+            } else {
+                return "Invalid email or password";
+            }
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
         }
