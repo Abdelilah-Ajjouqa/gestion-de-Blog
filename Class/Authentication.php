@@ -34,7 +34,7 @@ class Authentication {
             $userId = $this->db->lastInsertId();
 
             if ($userId){
-                $_SESSION['user_id'] = $userId['id'];
+                $_SESSION['user_id'] = $userId;
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
