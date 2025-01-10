@@ -69,7 +69,6 @@ class Authentication {
     }
 
     public function logout(){
-        
         //remove all session variables
         session_unset();
 

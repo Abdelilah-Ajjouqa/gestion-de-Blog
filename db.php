@@ -23,4 +23,4 @@ class Database {
 }
 
 $database = new Database();
-$pso = $database->getConnection();
+$pdo = $database->getConnection();

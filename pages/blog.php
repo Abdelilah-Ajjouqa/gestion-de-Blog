@@ -1,8 +1,11 @@
 <?php
+session_start();
 require '../db.php';
 require '../Class/Authentication.php';
 
-// $out = new Authentication($conn);
+if(isset($_SESSION['user_id'])){
+    header('Location: ./login/login.php');
+}
 ?>
 
 <!DOCTYPE html>
