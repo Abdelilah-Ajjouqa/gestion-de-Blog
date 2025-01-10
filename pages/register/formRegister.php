@@ -4,7 +4,7 @@ require '../../db.php';
 require '../../Class/Authentication.php';
 
 $db = new Database();
-$db = $db->getConnection();
+$conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmPassword'])){
@@ -14,11 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $confirmPassword = $_POST['confirmPassword'];
         $role = 'user';
         
-        $auth = new Authentication($db);
+        $auth = new Authentication($conn);
         $result = $auth->register($name, $email, $password, $confirmPassword, $role);
         
         if ($result === true) {
             header('location: ../login/login.php');
+            echo 'connect true';
             exit();
         } else {
             echo "<script>alert('$result');</script>";

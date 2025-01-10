@@ -43,7 +43,7 @@
                     <label for="name" class="sr-only">Name</label>
 
                     <div class="relative">
-                        <input type="text" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input type="text" name="name" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Enter name" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -60,7 +60,7 @@
                     <label for="email" class="sr-only">Email</label>
 
                     <div class="relative">
-                        <input type="email" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input type="email" name="email" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Enter email" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -77,7 +77,7 @@
                     <label for="password" class="sr-only">Password</label>
 
                     <div class="relative">
-                        <input id="password" type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input id="password" name="password" type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Enter password" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -96,7 +96,7 @@
                     <label for="password_confirmation" class="sr-only">Confirm Password</label>
 
                     <div class="relative">
-                        <input id="password_confirmation" type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input id="password_confirmation" name="confirmPassword" type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Confirm password" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
