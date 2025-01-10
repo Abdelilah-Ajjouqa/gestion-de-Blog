@@ -8,7 +8,7 @@ class Authentication {
 
     public function register($name, $email, $password, $confirmPassword, $role = 'user'){
 
-        try {
+        try {//check if the email is already exit
             $query = "select * from user where email = :email";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':email', $email);
@@ -23,6 +23,7 @@ class Authentication {
 
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             
+            // insert data to database
             $query = "INSERT INTO user (name, email, password, role) VALUES (:name, :email, :password, :role)";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':name', $name);
@@ -68,7 +69,6 @@ class Authentication {
     }
 
     public function logout(){
-        session_start();
         
         //remove all session variables
         session_unset();
